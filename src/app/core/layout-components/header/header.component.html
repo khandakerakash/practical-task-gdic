@@ -1,12 +1,13 @@
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
   <!-- Topbar Navbar -->
-  <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-        <a class="nav-link text-dark text-sm" href="#">
-          <i class="icon-log-out mr-1"></i> Sign Out
-        </a>
-    </li>
+  <ul class="navbar-nav ml-auto mr-5">
+    <a (click)="signOut()" class="btn btn-danger btn-icon-split mr-5">
+      <span class="icon text-white-50">
+          <i class="icon-log-out"></i>
+      </span>
+      <span class="text">Sign Out</span>
+    </a>
   </ul>
 </nav>
 <!-- End of Topbar -->

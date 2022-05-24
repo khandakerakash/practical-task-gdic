@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  rootURL: 'https://dummy.restapiexample.com/api/v1/'
 };
 
 /*
