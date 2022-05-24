@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PublicComponent } from './core/layout-components/view/public';
 
 const routes: Routes = [
   {

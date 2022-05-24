@@ -6,6 +6,8 @@ import { LoginReqModel } from 'src/app/core/models/request';
 import { LoginResModel } from 'src/app/core/models/response';
 import { AuthService } from 'src/app/core/services';
 
+const tokenData =  'TOKEN_INFO';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +20,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _authService: AuthService,
     private _toastrService: ToastrService
   ) { }
 
@@ -33,11 +34,9 @@ export class LoginComponent implements OnInit {
       });
       return;
     }
-
     if(this.loginResponse.username == this.loginRequest.username && this.loginResponse.password == this.loginRequest.password) {
       const resToken = this.loginRequest.username + this.loginRequest.password;
-      localStorage.setItem('tokenInfo', JSON.stringify(resToken));
-      debugger;
+      localStorage.setItem(tokenData, resToken);
       this._router.navigate(['dashboard']);
     } else {
       this._toastrService.error('Something went wrong. Please try again later.', 'Error', {

@@ -11,10 +11,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**',
-    redirectTo: 'login'
-  },
-  {
     path: 'login',
     component: PublicComponent,
     loadChildren: () => import('./authentication/authentication.module').then(m => m.AuthenticationModule),
@@ -33,7 +29,11 @@ const routes: Routes = [
     loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule),
     data: { title: 'Employee' },
     canActivate: [AuthGuard]
-  }
+  },
+  {
+    path: '**',
+    redirectTo: 'login'
+  },
 ];
 
 @NgModule({

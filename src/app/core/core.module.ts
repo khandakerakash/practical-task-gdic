@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { LayoutComponentsModule } from './layout-components/layout-components.module';
 
 
@@ -8,6 +9,7 @@ import { LayoutComponentsModule } from './layout-components/layout-components.mo
   declarations: [],
   imports: [
     CommonModule,
+    HttpClientModule,
     LayoutComponentsModule
   ]
 })
