@@ -4,7 +4,6 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';

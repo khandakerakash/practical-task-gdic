@@ -5,6 +5,7 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { ContainerComponent } from './components/container/container.component';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { AddComponent } from './components/add/add.component';
   ],
   imports: [
     CommonModule,
+    NgbModule,
     EmployeeRoutingModule
   ]
 })

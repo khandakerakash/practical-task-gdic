@@ -13,3 +13,21 @@
 
 /* SB ADMIN THEME*/
 @import 'assets/sb-theme-style/sb-admin-2.scss';
+
+/*Utility CSS*/
+.row-highlight-primary {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  background-image: none !important;
+}
+
+.custom-btn {
+  width: 35px !important;
+  height: 25px !important;
+  padding: 0;
+}
+
+.custom-btn-round {
+  width: 32px !important;
+  height: 32px !important;
+  padding: 0;
+}

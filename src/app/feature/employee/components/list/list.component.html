@@ -1,1 +1,80 @@
-<p>list works!</p>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="./dashboard">Dashboard</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Employee</li>
+  </ol>
+</nav>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card shadow mb-4">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <h6 class="m-0 font-weight-bold text-primary">{{infoLable}} Employee</h6>
+
+        <div class="card-header-right my-1">
+            <button *ngIf="createBtn" (click)="elementShowHide('create')" type="button" class="btn btn-primary btn-rounded btn-icon custom-btn-round mx-1" ngbTooltip="Press for creating an employee.">
+                <i class="icon-plus"></i>
+            </button>
+            <button *ngIf="listBtn" (click)="elementShowHide('list')" type="button" class="btn btn-success btn-rounded btn-icon custom-btn-round mx-1" ngbTooltip="Press for seeing the employee list.">
+                <i class="icon-list"></i>
+            </button>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <!--Employee Create Form Start-->
+        <div class="create-form" *ngIf="showHideCreateElement">
+          test
+        </div>
+        <!--Employee Create Form End-->
+
+        <!--Employee List Table Start-->
+        <div class="employee-list-table" *ngIf="listElement">
+          <div class="table-responsive text-center">
+            <table class="table table-bordered" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                    <!-- <th>#</th> -->
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Age</th>
+                    <th>Profile Image</th>
+                </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                  <!-- <th>#</th> -->
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Salary</th>
+                  <th>Age</th>
+                  <th>Profile Image</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <tr *ngFor="let item of employeeData; let i=index" (click)="highlightedRow(item.id)" [ngClass]="{'row-highlight-primary' : item.id == selectedName}">
+                  <!-- <td>{{i+1}}</td> -->
+                  <td>{{item.id}}</td>
+                  <td>{{item.employee_name}}</td>
+                  <td>{{item.employee_salary}}</td>
+                  <td>{{item.employee_age}}</td>
+                  <td>
+                    <div class="img-fluid img-thumbnail rounded">
+                      <i class="icon-user mt-2" *ngIf="item.profile_image == null || item.profile_image == ''; else profilePhoto"></i>
+                      <ng-template #profilePhoto>
+                          <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="{{item.profile_image}}" alt="Profile Image">
+                      </ng-template>
+                    </div>
+                  </td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+        <!--Employee List Table End-->
+      </div>
+    </div>
+  </div>
+</div>
+

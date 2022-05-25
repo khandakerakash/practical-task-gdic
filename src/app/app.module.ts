@@ -8,8 +8,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { GlobalInterceptor } from './core/interceptor/global.interceptor';
+import { NgHttpLoaderModule } from 'ng-http-loader'
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
       timeOut: 4000,
       preventDuplicates: true,
     }),
-    NgbModule
+    NgHttpLoaderModule.forRoot(),
   ],
   providers: [
     {

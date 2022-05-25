@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const components = [
   PublicComponent,
@@ -21,6 +22,7 @@ const components = [
     CommonModule,
     FormsModule,
     RouterModule,
+    NgbModule
   ],
   declarations: components,
   exports: components
