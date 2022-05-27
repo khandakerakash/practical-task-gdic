@@ -19,7 +19,6 @@ export class EmployeeResolver implements Resolve<GeneralResModel<EmployeeResMode
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<GeneralResModel<EmployeeResModel[]>> {
-    console.log('Called Get Employee in resolver...', route);
     return this._employeeService.getEmployeeList().pipe(
       catchError((error) => {
         return of();

@@ -4,7 +4,7 @@ import { ListComponent } from './components/list/list.component';
 import { EmployeeResolver } from 'src/app/core/resolver-services/employee';
 
 const routes: Routes = [
-  { path: 'list', component: ListComponent, resolve: { employeeData: EmployeeResolver} }
+  { path: '', component: ListComponent, resolve: { employeeData: EmployeeResolver}, data: {title: 'List'} }
 ];
 
 @NgModule({

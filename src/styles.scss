@@ -31,3 +31,23 @@
   height: 32px !important;
   padding: 0;
 }
+
+.active-menu {
+  padding: 10px !important;
+  background-color: #fff;
+  color: #111!important;
+
+  i {
+    color: #111!important;
+  }
+}
+
+.form-group.required .control-label:after {
+  content: "*";
+  color: #ff5252 !important;
+  margin-left: 4px !important;
+}
+
+label.control-label {
+  font-size: 14px !important;
+}

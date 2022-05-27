@@ -3,28 +3,22 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/dashboard">
-        <div class="mx-3 fs-2 font-monospace">GDIC</div>
-    </a>
+      <div class="mx-3 fs-2 font-monospace">GDIC</div>
+  </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" routerLink="/dashboard">
-          <i class="icon-home"></i>
-          <span>Dashboard</span>
-        </a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <li class="nav-item active">
-      <a class="nav-link" routerLink="/employee/list">
-        <i class="icon-users"></i>
-        <span>Employee</span>
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard" routerLinkActive="active-menu">
+        <i class="icon-home"></i>
+        <span>Dashboard</span>
       </a>
-    </li>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/employee" routerLinkActive="active-menu">
+      <i class="icon-users"></i>
+      <span>Employee</span>
+    </a>
+  </li>
 </ul>
 <!-- End of Sidebar -->
