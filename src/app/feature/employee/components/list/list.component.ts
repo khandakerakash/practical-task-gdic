@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Store } from '@ngrx/store';
 import { ToastrService } from 'ngx-toastr';
+import { Observable, tap, using } from 'rxjs';
 import { EmployeeCreateReqModel } from 'src/app/core/models/request';
 import { EmployeeResModel, GeneralResModel } from 'src/app/core/models/response';
+import { EmployeeFormState } from 'src/app/core/store/models/employee-form-state';
 
 @Component({
   selector: 'app-list',
@@ -12,7 +17,6 @@ import { EmployeeResModel, GeneralResModel } from 'src/app/core/models/response'
 export class ListComponent implements OnInit {
 
   selectedName!: number;
-
   infoLable: string = 'List Of';
   listBtn: boolean = false;
   createBtn: boolean = true;
@@ -21,13 +25,30 @@ export class ListComponent implements OnInit {
   employeeData: EmployeeResModel[] = [];
   createRequest: EmployeeCreateReqModel = new EmployeeCreateReqModel();
 
+  form!: FormGroup;
+  user!: Observable<EmployeeFormState>;
+
   constructor(
+    // private store: Store<EmployeeFormState>,
+    private formBuilder: FormBuilder,
     private _toastrService: ToastrService,
     private _activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     this.getEmployeeList();
+    // const form$ = this.store.select(x => x.form);
+
+    this.form = this.formBuilder.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
+    });
+  }
+
+  submit() {
+    if (this.form.valid) {
+      console.log(this.form.value);
+    }
   }
 
   getEmployeeList() {

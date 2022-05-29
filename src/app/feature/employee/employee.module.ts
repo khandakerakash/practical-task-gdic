@@ -5,7 +5,8 @@ import { EmployeeRoutingModule } from './employee-routing.module';
 import { ContainerComponent } from './components/container/container.component';
 import { ListComponent } from './components/list/list.component';
 import { AddComponent } from './components/add/add.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule, NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   imports: [
     CommonModule,
-    NgbModule,
+    NgbTooltipModule,
+    ReactiveFormsModule,
     EmployeeRoutingModule
   ]
 })

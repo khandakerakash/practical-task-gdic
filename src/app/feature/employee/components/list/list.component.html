@@ -24,7 +24,47 @@
       <div class="card-body">
         <!--Employee Create Form Start-->
         <div class="create-form" *ngIf="showHideCreateElement">
-          test
+          <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="form-group required">
+                  <label class="control-label">First Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="First Name"
+                    formControlName="firstName"
+                  >
+                  <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)">
+                    <div *ngIf="form.controls['firstName'].errors?.['required']" class="text-danger">
+                      First name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="form-group required">
+                  <label class="control-label">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Last Name"
+                    formControlName="lastName"
+                  >
+                  <div *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].dirty || form.controls['lastName'].touched)">
+                    <div *ngIf="form.controls['lastName'].errors?.['required']" class="text-danger">
+                      Last name is required.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 mt-3">
+                <button class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+              </div>
+            </div>
+          </form>
+
         </div>
         <!--Employee Create Form End-->
 

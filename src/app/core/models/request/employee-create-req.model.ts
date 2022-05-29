@@ -2,10 +2,10 @@ import { NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
 
 export class EmployeeCreateReqModel {
   firstName!:       string;
-  lastName!:        number;
+  lastName!:        string;
   dateOfBirthNgb!:  NgbDateStruct;
   dateOfBirth!:     Date;
-  phoneNo!:         number;
+  phoneNo!:         string;
   gender!:          string;
   skillName!:       string;
   experienceInYear!:string;
